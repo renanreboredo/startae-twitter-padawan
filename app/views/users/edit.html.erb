@@ -1,0 +1,12 @@
+<h1>Editing User</h1>
+
+<% flash.each do |name, message| %>
+  <%= message %>
+<% end %>
+
+<%# <%= flash.notice.each do |message| puts message end %1> %>
+
+<%= render 'form', user: @user %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

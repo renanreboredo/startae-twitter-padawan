@@ -1,0 +1,42 @@
+<div class="col-md-6 col-md-offset-3">
+  <p id="notice"><%= notice %></p>
+
+  <div class="page-header">
+    <h1>Users</h1>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Twitter account</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.role %></td>
+          <td><%= user.twitter_account %></td>
+          <%# <td><%= link_to 'Show', user %1></td> %>
+          <td>
+            <div class="btn-toolbar pull-right">
+                <%= link_to user, class: "btn btn-default" do %>
+                    <%= fa_icon "twitter" %>
+                <% end %>
+              <%= link_to edit_user_path(user), class: "btn btn-default" do %><i class="glyphicon glyphicon-edit"></i><% end %>
+              <%= link_to user, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger" do %><i class="glyphicon glyphicon-trash"></i><% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to "New User", new_user_path, class: "btn btn-primary" %>
+</div>
