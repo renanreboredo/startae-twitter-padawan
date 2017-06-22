@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Configuration
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- To run the project, you need to do the following:
+  - Have rails and ruby installed
+  - Run the rails db:setup command
+  - And, in Rails Console Mode, do:
+    ``` ruby
+    Team.fetch_team_members
+    ```
